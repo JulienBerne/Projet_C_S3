@@ -1,0 +1,20 @@
+# ninja log v5
+0	156	7233149295872872	CMakeFiles/projet_c.dir/main.c.obj	3d19de7a1a8be771
+1	179	7233855508786794	build.ninja	82b1bdd7104be193
+118	235	7233460249925591	projet_c.exe	3241729175c0fed
+3	101	7233460248650152	CMakeFiles/projet_c.dir/main2.c.obj	defc5447208fc51b
+18	150	7233308658751940	CMakeFiles/projet_c.dir/teste.c.obj	c3074337714dd1d0
+5	166	7233152655618577	CMakeFiles/projet_c.dir/timer.c.obj	e38fb61e8ccf63e8
+10	117	7233460248810132	CMakeFiles/projet_c.dir/fonction.c.obj	feec638eeccf1789
+2	166	7234159567678850	CMakeFiles/projet_c.dir/fonction.c.obj	feec638eeccf1789
+166	473	7234159570719877	projet_c.exe	3241729175c0fed
+3	101	7234159782513817	CMakeFiles/projet_c.dir/fonction.c.obj	feec638eeccf1789
+101	187	7234159783349108	projet_c.exe	3241729175c0fed
+2	104	7234161820727795	CMakeFiles/projet_c.dir/fonction.c.obj	feec638eeccf1789
+104	203	7234161821673651	projet_c.exe	3241729175c0fed
+3	92	7234162031936593	CMakeFiles/projet_c.dir/main2.c.obj	defc5447208fc51b
+93	178	7234162032749850	projet_c.exe	3241729175c0fed
+4	82	7234162229376412	CMakeFiles/projet_c.dir/main2.c.obj	defc5447208fc51b
+83	182	7234162230316748	projet_c.exe	3241729175c0fed
+3	236	7234166230743577	CMakeFiles/projet_c.dir/fonction.c.obj	feec638eeccf1789
+236	366	7234166232008725	projet_c.exe	3241729175c0fed
