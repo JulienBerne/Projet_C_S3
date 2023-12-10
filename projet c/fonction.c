@@ -1,10 +1,9 @@
 #include "fonction.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 
 int rechercheplus(int val, t_d_list mylist) {
-    printf("Demarrage recherche plus sur valeur = %d\n", val);
+    //printf("Demarrage recherche plus sur valeur = %d\n", val);
     if (mylist.head[0] == NULL) {
         // La liste est vide, on sort
         return 0;
@@ -23,7 +22,7 @@ int rechercheplus(int val, t_d_list mylist) {
         int sortie=0;
         int trouver = 0;
         while (sortie == 0) {
-            printf("debut boucle curVal = %d\n", mycell->value);
+            //printf("debut boucle curVal = %d\n", mycell->value);
             if (mycell->value == val) {
                 trouver = 1; // Valeur trouvée
                 sortie = 1; // On sort;
@@ -217,108 +216,17 @@ void dichotomie(t_d_list * myListHead , int * tabval){
 
 }
 
-void scanstring(char * input, int max_length) {
-    printf("Saisir le texte:\n");
-    if (fgets(input, max_length, stdin) != NULL) {
-        // suppression retour chariot
-        char * pos = strchr(input, '\n');
-        if (pos != NULL)
-            *pos = '\0';
-    }
-}
 
-Agenda * createAgenda() {
-    Agenda * A = (Agenda*)malloc(sizeof(Agenda));
-    A->head = (AgendaEntry_t**)malloc(sizeof(AgendaEntry_t*) * 4);
-    for (int i = 0; i < 4; i++) {
-        A->head[i] = NULL; // Initialisation des pointeurs à NULL
-    }
-    return A;
-}
 
-AgendaEntry_t * createAgendaEntry(char * nom, char * prenom) {
-    AgendaEntry_t * A = (AgendaEntry_t *)malloc(sizeof(AgendaEntry_t));
-    A->contact.nom = (char *)malloc(sizeof(char *) * strlen(nom));
-    A->contact.prenom = (char *)malloc(sizeof(char *) * strlen(prenom));
-    strcpy(A->contact.nom, nom);
-    strcpy(A->contact.prenom, prenom);
-    A->rendezVous = NULL;
-    A->suivant = (AgendaEntry_t **)malloc(sizeof(AgendaEntry_t *) * 4);
-    for (int i=0;i<4;i++)
-        A->suivant[i] = NULL;
-    return A;
-}
 
-RendezVous * createRdv(Date d, Heure debut, Heure duree, char * objet) {
-    RendezVous * R = (RendezVous *)malloc(sizeof(RendezVous));
-    R->date=d;
-    R->debut=debut;
-    R->duree=duree;
-    R->objet = (char *)malloc(sizeof(char *) * strlen(objet));
-    strcpy(R->objet,objet);
-}
 
-void addRdvToContact(AgendaEntry_t * A, RendezVous * R) {
-    if (A->rendezVous == NULL) {
-        // premier rdv
-        A->rendezVous = R;
-    } else {
-        // ajouter un rdv au debut de liste
-        R->next = A->rendezVous;
-        A->rendezVous = R;
-    }
-}
 
-void insertAgenda(Agenda * currentAgenda, AgendaEntry_t * newEntry){
-    AgendaEntry_t * A;
-    AgendaEntry_t * pA;
-    if (currentAgenda==NULL) {
-        printf("ERROR, an agenda must be created!\n");
-        exit(1);
-    }
-    for (int i=0;i<4;i++) { // 4 niveau de chainage
-        printf("lvl=%d\n", i);
-        A = currentAgenda->head[i];
-        pA = currentAgenda->head[i];
-        if (currentAgenda->head[i] == NULL) {
-            printf("liste is empty\n");
-            currentAgenda->head[i] = newEntry;
-        } else {
-            while( (newEntry->contact.nom[i] < A->contact.nom[i]) && (A->suivant[i] != NULL) ){
-                pA = A;
-                A = A->suivant[i];
-            }
-            if (newEntry->contact.nom[i] >= A->contact.nom[i]) {
-                // inserer avant
-                if (A == currentAgenda->head[i]) {
-                    newEntry->suivant[i] = A;
-                    currentAgenda->head[i] = newEntry;
-                } else {
-                    newEntry->suivant[i] = pA->suivant[i];
-                    pA->suivant[i] = newEntry;
-                }
-            } else {
-                // inserer apres
-                A->suivant[i] = newEntry;
-            }
-        }
-    }
-}
 
-void printAgenda (AgendaEntry_t *  A , int lvl) {
-    AgendaEntry_t* next= A->suivant[lvl];
-    while (next != NULL) {
-        printf("--> [ %s_%s |@ ] ", next->contact.nom, next->contact.prenom);
-        next = next->suivant[lvl];
-    }
-    printf("-->NULL\n");
-    return;
-}
 
-void printAllAgenda(AgendaEntry_t * myAgenda) {
-    for (int i = 0 ; i<4; i++){
-        printf("[list head_%d @-]",i);
-        printAgenda(myAgenda,i);
-    }
-    return;
-}
+
+
+
+
+
+
+
